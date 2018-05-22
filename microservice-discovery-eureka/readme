@@ -1,0 +1,5 @@
+1.启动类上添加注解
+	@EnableEurekaServer 表明是一个eureka server 
+2.添加配置文件
+	默认是没有密码和用户名的，如果想要添加的话，先在pom中添加security 依赖，然后在配置文件
+	中添加用户名和密码

@@ -1,0 +1,5 @@
+1.启动类上添加注解
+	@EnableEurekaClient或者@EnableDiscoveryClient，两者的区别是 
+		EnableEurekaClient只可用于eureka的注册中心，EnableDiscoveryClient还可用于zookeeper等注册中心
+2.添加配置文件
+

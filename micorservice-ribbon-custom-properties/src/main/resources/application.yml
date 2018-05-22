@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: micorservice-consumer-movie-ribbon
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    #${spring.application.name}:${spring.application.instance_id:${server.port}}
+micorservice-provider-user: # 为改服务自定义规则，不会影响其他服务
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    #轮询规则: com.netflix.loadbalancer.RoundRobinRule
+    #随机的规则: com.netflix.loadbalancer.RandomRule
+    #根据响应时间分配权重: com.netflix.loadbalancer.WeightedResponseTimeRule

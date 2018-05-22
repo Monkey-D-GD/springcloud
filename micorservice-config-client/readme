@@ -1,0 +1,6 @@
+config clien 类，
+1.测试通过config server 获取配置信息
+2.修改git 仓库中的配置后会发现，访问时并没有获取到最新的配置信息
+    可以通过@RefreshScope 注解+ 手动刷新的方式获取最新的配置信息
+        手动刷新 ： curl -X POST http://localhost:8081/refresh 返回
+            ["config.client.version","profole"] 表示刷新成功，注意在配置文件中关闭验证

@@ -1,0 +1,9 @@
+eureka 集群的使用
+	在网上大多方式：
+		1.一个 application.yml 配置文件  通过 ‘---’ 分割 配置多个server，然后通过 active
+			来指定启动哪个server，但是亲测无效。
+		2.分成三个 application.yml application-server1.yml application-server2.yml
+			然后通过 application.yml 中的active 来指定启动，亲测无效
+		3.分为3个yml 配置文件，启动时 run config 配置 profiles 为 server1 或者 server2 来启动，亲测有效。
+
+	

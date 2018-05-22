@@ -1,0 +1,18 @@
+1.集成bus_amqp jar包
+2.在配置文件中配置rabbitmq的信息
+3.启动多个实例
+4.修改后git仓库中的配置文件后执行
+    curl -X POST http://localhost:8081/bus/refresh
+        发现 8082的配置文件也更新了
+
+5.也可以利用 destination 参数来实现局部刷新
+
+    eg: 仅刷新8081的配置文件
+
+        curl -X POST http://localhost:8081/bus/refresh?destination=microservice-foo:8081
+    如果命令是
+        curl -X POST http://localhost:8081/bus/refresh?destination=microservice-foo:8082
+    则两个都会刷新
+
+6.执行命令的实质是更新了本地库中的配置文件，在第一次请求时会去Git仓库中进行配置文件的下载，
+    然后便不在请求git仓库，只有显示的调用才会再次请求更新本地文件。

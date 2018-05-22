@@ -1,0 +1,18 @@
+springcloud config server 测试对外提供获取配置的服务
+
+    第一版时只对外提供获取配置的服务，随后加入了bus_amqp 实现了配置文件的自动刷新
+由于刷新配置文件刚开始是由 micorservice-config-client-refresh-bus 微服务来实现的，这样违背了微服务的
+单一原则，所以将配置文件的刷新交由config_server来完成。具体实现大同小异，参考代码。
+
+ps:
+    全部刷新：
+
+        curl -X POST http://localhost:8080/bus/refresh
+
+    刷新 microservice-foo 下的所有配置
+
+        curl -X POST http://localhost:8080/bus/refresh?destination=microservice-foo:**
+
+    仅刷新8081:
+
+        curl -X POST http://localhost:8080/bus/refresh?destination=microservice-foo:8081

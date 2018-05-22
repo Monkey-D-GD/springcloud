@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: microservice-foo  #与git里的文件名对应
+  cloud:
+    config:
+      uri: http://localhost:8080/ # 指明配置服务中心的网址
+      # dev 开发环境配置文件 |  test 测试环境  |  pro 正式环境
+      # 和git里的文件名对应
+      profile: production
+      label: config-label-v2.0           # 指定Git仓库的分支，对应config server所获取的配置文件的{label}

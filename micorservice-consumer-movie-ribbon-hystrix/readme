@@ -1,0 +1,8 @@
+ribbon集成 hystrix
+	1.添加依赖
+		<dependency>  
+			<groupId>org.springframework.cloud</groupId>  
+			<artifactId>spring-cloud-starter-hystrix</artifactId>  
+		</dependency>  
+	2.启动类上添加 @EnableCircuitBreaker或@EnableHystrix  注解表示开启对hystrix的支持。
+	3.代码实现

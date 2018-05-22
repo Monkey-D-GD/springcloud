@@ -1,0 +1,8 @@
+server:
+  port: 8081
+# 关闭验证，否则手动刷新会报错，报错信息如下：
+#{"timestamp":1521710178557,"status":401,"error":"Unauthorized","message":"Full a
+ #uthentication is required to access this resource.","path":"/refresh"}
+management:
+  security:
+    enabled: false

@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Monkey-D-GD/springcloudconfig #仓库地址
+          username: guodong260007@163.com #git 用户名
+          password: #密码
+    bus:
+      trace:
+        enabled: true #开启cloud bus 的跟踪
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+# 关闭验证，否则刷新会报错
+management:
+  security:
+    enabled: false

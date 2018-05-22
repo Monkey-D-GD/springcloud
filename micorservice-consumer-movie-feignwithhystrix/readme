@@ -1,0 +1,5 @@
+feign 对 hystrix 的支持
+	1.UserFeignClient 接口添加 fallback类
+	2.fallback类实现UserFeignClient类 并添加 @Component注解加入容器
+	3.在配置文件中开启 feign 对 hystrix 的支持
+	
