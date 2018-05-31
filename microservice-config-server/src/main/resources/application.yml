@@ -8,7 +8,7 @@ spring:
       server:
         git:
           uri: https://github.com/Monkey-D-GD/springcloudconfig #仓库地址
-          username: guodong260007@163.com #git 用户名
+          username:  #git 用户名
           password: #密码
     bus:
       trace:
